@@ -1,0 +1,51 @@
+body {
+	background-color: white;
+	opacity: 1.0;
+}
+
+label {
+	color: white;
+}
+
+.login_panel {
+	padding: 10px;
+	background-color: black;
+	color: white!important;
+	width: 40%;
+	margin: auto;
+	float: center;
+	margin-top: 10%;
+	margin-bottom: 10%;
+}
+
+.login_panel h2 {
+	color: white!important;
+}
+
+.main_area {
+	margin: auto;
+	width: 80%;
+	text-align: center;
+	margin-top: 10%;
+}
+
+.main_area .main_panel {
+	background-color: black;
+	color: white!important;
+}
+
+.main_area .main_panel h1 {
+	color: rgba(193, 0, 0, 1);
+}
+
+footer.panel {
+	background-color: #820000;
+	margin-top: 10%;
+	padding: 20px;
+	min-width: 100%;
+	margin-bottom: 0px;
+}
+
+footer ul {
+	list-style-type: none;
+}
