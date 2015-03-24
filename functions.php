@@ -59,4 +59,16 @@
 		else
 			return false;
 	}
+	
+	function send_confirmation($email)
+	{
+		include("db_con.php");
+		$q = "select * from USERS where EMAIL = $email";
+		$result = mysqli_query($con, $q) or die ("Error getting User " . mysqli_error($con));
+		
+		$result_array = mysqli_fetch_assoc($result);
+		$to = $result_array['EMAIL'];
+		$message("Click this link to activate your account www.aputrade.com?code=" . $result_array['CODE']);
+		mail($to, "Activate your account", $message);
+	}
 ?>
