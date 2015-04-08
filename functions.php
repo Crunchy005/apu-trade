@@ -71,4 +71,17 @@
 		$message("Click this link to activate your account www.aputrade.com?code=" . $result_array['CODE']);
 		mail($to, "Activate your account", $message);
 	}
+	
+	function check_active($email)
+	{
+		include("db_con.php");
+		$q = "select CONFIRMED from USERS where EMAIL = '$email'";
+		$result = mysqli_query($con, $q) or die ("Error checking confirmation status " . mysqli_error($con));
+		
+		$result_array = mysqli_fetch_assoc($result);
+		if($result_array['CONFIRMED'] == 1)
+			return true;
+		else
+			return false;
+	}
 ?>

@@ -79,8 +79,10 @@
 					</ul>
 			</aside>
 		<?php
-			if(!isset($_GET['page']))
+			if(check_active($_SESSION['username']))
 			{
+				if(!isset($_GET['page']))
+				{
 		?>
 			<!-- Floating Large Buttons using grid layout -->
 			<ul class="main_area large-block-grid-2">
@@ -102,14 +104,17 @@
 				</li>
 			</ul>
 		<?php
-			}
-			else
-			{
-				if($_GET['page'] == "view")
-					include("includes/view_posts.php");
-				if($_GET['page'] == "create")
-					include("includes/create_post.php");
-			}
+				}
+				else
+				{
+					if($_GET['page'] == "view")
+						include("includes/view_posts.php");
+					if($_GET['page'] == "create")
+						include("includes/create_post.php");
+					if($_GET['page'] == "confirm")
+						include("includes/confirm.php");
+				}
+			}else echo "<p class='panel radius row'>You have not yet confirmed your email address.  Please do so in order to access the website.</p>"
 		?>
 			<a class="exit-off-canvas"></a>
 			<?php
